@@ -1,9 +1,8 @@
-const { Blob, resolveObjectURL } = require('buffer');
+var http = require('http');
 
-const blob = new Blob(['hello']);
-const id = URL.createObjectURL(blob);
-
-// later...
-
-const otherBlob = resolveObjectURL(id);
-console.log(otherBlob.size);
+http
+  .createServer(function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello World!');
+  })
+  .listen(8080);
