@@ -1,9 +1,8 @@
-http = require('http');
+const one = [];
 
-const server = http.createServer((req, res) => {
-  console.log('request was made');
-});
+for (let i = 0; i < 10000; i++) {
+  debugger;
+  one.push(i);
+}
 
-server.listen(3000, 'localhost', () => {
-  console.log('listening on port 3000');
-});
+console.log(one);
